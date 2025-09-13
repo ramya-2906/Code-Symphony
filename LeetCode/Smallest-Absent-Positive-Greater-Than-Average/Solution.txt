@@ -1,0 +1,16 @@
+class Solution(object):
+    def smallestAbsent(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        n=len(nums)
+        r=sum(nums)/n
+        s=int(r)+1
+        while True:
+            if s>0 and s not in nums:
+                return s
+            s+=1
+            
+            
+        
