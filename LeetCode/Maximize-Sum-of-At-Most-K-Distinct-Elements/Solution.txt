@@ -1,0 +1,16 @@
+class Solution(object):
+    def maxKDistinct(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: List[int]
+        """
+        nums.sort(reverse=True)
+        d=[]
+        for n in nums:
+            if n not in d:
+                d.append(n)
+            if len(d)==k:
+                break
+        return d
+        
