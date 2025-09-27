@@ -1,0 +1,31 @@
+class Solution(object):
+    def distinctPoints(self, s, k):
+        """
+        :type s: str
+        :type k: int
+        :rtype: int
+        """
+        m=len(s)
+        r=[(0,0)]
+        for j in range(m):
+            x,y=r[-1]
+            if s[j]=='U':
+                y+=1
+            elif s[j]=='D':
+                y-=1
+            elif s[j]=='L':
+                x-=1
+            elif s[j]=='R':
+                x+=1
+            r.append((x,y))
+        p=set()
+        tx,ty=r[-1]
+        for i in range(m-k+1):
+            rx=r[i+k][0]-r[i][0]
+            ry=r[i+k][1]-r[i][1]
+            xf=tx-rx
+            yf=ty-ry
+            p.add((xf,yf))
+        return len(p)
+        
+        
