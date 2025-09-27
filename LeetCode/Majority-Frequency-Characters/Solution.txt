@@ -1,0 +1,13 @@
+from collections import Counter,defaultdict
+class Solution(object):
+    def majorityFrequencyGroup(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        f=Counter(s)
+        r=defaultdict(list)
+        [r[b].append(c) for c,b in f.items()]
+        k,g=max(r.items(),key=lambda y: (len(y[1]),y[0]))
+        return "".join(sorted(g))
+        
