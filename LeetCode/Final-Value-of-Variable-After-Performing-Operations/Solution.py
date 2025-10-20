@@ -1,8 +1,9 @@
-	for(int i = 0;i < operations.length; i++)
-    {
-		if(operations[i].charAt(1) == '+') x++;
-		else x--;
-	}
-
-	return x;        
-}
+class Solution:
+    def finalValueAfterOperations(self, operations: List[str]) -> int:
+        count = 0
+        for op in operations:
+            if "-" in op:
+                count -= 1
+            else:
+                count += 1
+        return count
