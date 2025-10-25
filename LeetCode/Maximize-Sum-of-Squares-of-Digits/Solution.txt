@@ -1,0 +1,8 @@
+class Solution:
+    def maxSumOfSquares(self, num: int, sum: int) -> str:
+        res=[]
+        for _ in range(num):
+            r=min(9,sum)
+            res.append(str(r))
+            sum-=r
+        return ''.join(res) if sum==0 else ''
