@@ -1,0 +1,1 @@
+[&](int sum, int x){ return sum+(x%3!=0);};
