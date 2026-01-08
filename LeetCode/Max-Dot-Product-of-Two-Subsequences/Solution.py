@@ -1,0 +1,1 @@
+curr[j] = max(previous_take + take, take, no_take, previous_take_cur)
